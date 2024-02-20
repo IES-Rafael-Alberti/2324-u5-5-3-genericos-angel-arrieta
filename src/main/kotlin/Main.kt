@@ -1,7 +1,21 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+package Pila
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun reverse(monton: List<Any>): List<Any>{
+    val montonInvertido: MutableList<Any> = mutableListOf()
+    val apilado = Pila(monton)
+
+    do { montonInvertido.add(apilado.pop()) }
+    while (apilado.size() > 0)
+
+    return montonInvertido
+}
+fun main() {
+    val numeros = listOf("one", "two", "three", "four")
+    val numerosRev = reverse(numeros)
+    if (!listOf("four", "three", "two", "one").equals(numerosRev))
+        println("Error")
+    else
+        println("Correcto")
+    println(numerosRev)
+
 }
