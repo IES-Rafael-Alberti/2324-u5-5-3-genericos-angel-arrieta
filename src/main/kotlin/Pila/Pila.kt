@@ -1,10 +1,7 @@
 package Pila
 
-class Pila(): Iterable<Any>  {
-    var contenedor: MutableList<Any> = mutableListOf()
-    constructor(lista: List<Any>): this(){
-        this.contenedor = lista.toMutableList()
-    }
+class Pila: Iterable<Any>  {
+    private var contenedor: MutableList<Any> = mutableListOf()
     override fun iterator(): Iterator<Any> {
         return object: Iterator<Any> {
             private var indiceActual = 0
@@ -30,6 +27,6 @@ class Pila(): Iterable<Any>  {
         return sacar
     }
     fun vacia(): Boolean {
-        return contenedor.size != 0
+        return contenedor.size == 0
     }
 }

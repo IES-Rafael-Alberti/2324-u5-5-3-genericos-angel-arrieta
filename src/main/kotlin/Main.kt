@@ -2,12 +2,14 @@ package Pila
 
 fun reverse(monton: List<Any>): List<Any>{
     val montonInvertido: MutableList<Any> = mutableListOf()
-    val apilado = Pila(monton)
+    val apilado = Pila()
+    for (objeto in monton){
+        apilado.push(objeto)
+    }
     do {
         montonInvertido.add(apilado.tope())
         apilado.pop()
-    }
-    while (!apilado.vacia())
+    } while (!apilado.vacia())
     return montonInvertido
 }
 fun main() {
