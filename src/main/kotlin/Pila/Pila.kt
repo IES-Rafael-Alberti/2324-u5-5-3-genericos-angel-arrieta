@@ -1,8 +1,8 @@
 package Pila
 
-class Pila(lista: List<Any>) : Iterable<Any>  {
+class Pila(): Iterable<Any>  {
     private var contenedor: MutableList<Any> = mutableListOf()
-    init{
+    constructor(lista: List<Any>): this(){
         this.contenedor = lista.toMutableList()
     }
     override fun iterator(): Iterator<Any> {
